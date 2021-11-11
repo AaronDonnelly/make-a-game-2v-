@@ -1,15 +1,12 @@
-let lives = 0
 input.onButtonPressed(Button.A, function () {
-    lives += -1
+    no_of_lives += -1
 })
 input.onButtonPressed(Button.B, function () {
-    lives += 1
+    no_of_lives += 1
 })
+let no_of_lives = 0
 basic.forever(function () {
-    let _0_lives = 0
-    let _1_lives = 0
-    if (_1_lives) {
-        basic.showString("\"WINNER\"")
+    if (0 < no_of_lives) {
         basic.showLeds(`
             . # . # .
             . . . . .
@@ -17,7 +14,7 @@ basic.forever(function () {
             . # # # .
             . . . . .
             `)
-    } else if (_0_lives) {
+    } else if (no_of_lives < 0) {
         basic.showLeds(`
             . # . # .
             . . . . .
